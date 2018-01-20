@@ -15,7 +15,7 @@ Just need to clone the repo or download the zip.
 1.Angular JS
 2.CSS3
 3.HTML5
-4.JQuery
+4.Java Script
 5.Bootstrap
 
 
@@ -28,3 +28,4 @@ S Surya Kiran
 
 ## Acknowledgments
 Thank you Edwisor.
+    
