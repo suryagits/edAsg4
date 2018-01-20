@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html lang="en" ng-app="myAppOneSix">
+
+	<head>
+
+		<title>EPL 2016-17</title>
+	    <meta charset="utf-8">
+	    <!-- setting viwport & initial scaling -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+	    <!-- Bootstrap CDN & dependencies -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="      				 anonymous">
+	    </script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <!-- external custom css file -->
+		<link rel = "stylesheet" type = "text/css" href = "css/eplSeason16.css" />
+		<!-- angular js min file -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+		<!-- angulsr js route provider -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+		
+		<script type="text/javascript" src="js16/app.js"></script>
+		<script type="text/javascript" src="js16/routeConfig/routes.js"></script>
+
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+
+	</head>
+
+	<body>
+
+		<!-- top navigation - fixed -->
+		<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="#"><b><u>Welcome to EPL 16-17</u></b></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		        <!-- <li><a href="#"><b>EPL Season 2015-2016</b></a></li> -->
+		        <li><a href="indexSeason15"><b>Go to EPL Season 2015-2016</b></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav> 
+
+	<div class="jumbotron">
+		<div class="container">
+
+
+		</div>
+	</div>
+
+	<div class="container-fluid" style="margin-top:5%;">
+
+		<div class="row">
+    		<div class="col-xs-1 col-sm-1"></div>
+    		<div class="col-xs-9 col-sm-9 col-md-12 text-center">
+    			<img src="media/imgThree.jpg" class="img-circle image" alt="Cinque Terre">
+    		</div>
+    		<div class="col-xs-2 col-sm-2"></div>
+    	</div>
+
+    	<div class="row">
+			<div class="col-xs-2 col-sm-2 col-md-2"></div>
+    				
+			<div class="col-xs-8 col-sm-8 col-md-8">
+				<hr style="height:1px;border:none;color:#333;background-color:#333;">
+                <ul class="nav nav-pills nav-justified"><!--  style="background: yellow;"> -->
+				<li class="mainMenu"><a ng-href="#/" style="color:#060759;background: #00ff00;"><b>HOME</span></b></a></li>
+				<li class="mainMenu"><a ng-href="#/allfixtures" style="color:#060759;background:#996699;"><b><span onclick="smoothScroll(document.getElementById('matchDay'));">ALL FIXTURES</span></b></a></li>
+				<li class="mainMenu"><a ng-href="#/teamwise" style="color:#c5131f;background:#99ffff;"><b><span onclick="smoothScroll(document.getElementById('matchDay'));">TEAM-WISE STATS</span></b></a></li>
+				</ul>
+				<hr style="height:1px;border:none;color:#333;background-color:#333;">
+       		</div>
+
+			<div class="col-xs-2 col-sm-2 col-md-2"></div>
+		</div>
+
+		<!-- imp for SPA -->
+		<ng-view></ng-view>
+
+	</div>
+
+	<!-- bottom navigation bar -->
+	<nav class="navbar navbar-default navbar-bottom">
+	    <div class="container-fluid">
+		    <div class="navbar-header">
+		      <p class="navbar-brand">English Premier League - &copy; Surya @ Ed - 2018</p>
+		    </div>
+	    </div>
+	</nav>
+
+    <!-- added for scrolling purpose -->
+		<div id="matchDay"></div>
+		
+		<script type="text/javascript">
+
+			window.smoothScroll = function(target) 
+		{
+				
+		    var scrollContainer = target;
+		    do { //find scroll container
+		        scrollContainer = scrollContainer.parentNode;
+
+		        if (!scrollContainer) return;
+		        scrollContainer.scrollTop += 1;
+		        console.log(scrollContainer.scrollTop);
+		    } while (scrollContainer.scrollTop == 0);
+		    
+		    var targetY = 0;
+		    do { //find the top of target relatively to the container
+		        if (target == scrollContainer) break;
+		        targetY += target.offsetTop;
+		    } while (target = target.offsetParent);
+		    
+		    scroll = function(c, a, b, i) {
+		        i++; if (i > 30) return;
+		        c.scrollTop = a + (b - a) / 30 * i;
+		        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+		    }
+		    // start scrolling
+		    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+		}
+
+		</script>
+
+
+	</body>
+
+
+</html>

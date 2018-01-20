@@ -1,0 +1,53 @@
+<div class="container">
+
+	<h3 style="font-family: 'VT323', monospace;">The team stats are as follows:</h3>
+
+	<div class="row">
+			
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead class="shortHand">
+						
+						<tr>
+							<th>TEAM NAME</th>
+							<th>TOTAL PLAYED</th>
+							<th>TOTAL GOALS</th>
+							<th>TOTAL WON</th>
+							<th>TOTAL LOST</th>
+							<th>TOTAL DRAWS</th>
+							<th>WIN %</th>
+						</tr>
+
+					<tbody>
+						<tr>
+							<td>{{teamName}}</td>
+							<td>{{totalplayed}}</td>
+							<td>{{totalGoals}}</td>
+							<td>{{won}}</td>
+							<td>{{lost}}</td>
+							<td>{{draw}}</td>
+							<td>{{winPercent}}</td>
+						</tr>
+					</tbody>
+
+					</thead>
+				</table>
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+	<div class="row">
+		<div class="col-xs-3 col-sm-4 col-md-5"></div>
+		<div class="col-xs-4 col-sm-4 col-md-4"><button type="button" class="btn btn-danger addMargin" ng-click="goBacktoChooseTeam()">Navigate Back</button></div>
+		<div class="col-xs-5 col-sm-4 col-md-3"></div>
+
+	</div>
+ 
+
+</div>

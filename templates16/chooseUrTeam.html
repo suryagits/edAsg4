@@ -1,0 +1,21 @@
+<div class="container-fluid"><!--  style="background: yellow;"> -->
+ 
+	<div class="container">
+
+		<h3 style="font-family: 'VT323', monospace;">Choose a team to retrieve the EPL 2015-16 season stats:</h3>
+		<div class="row">
+			
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<nav aria-label="Page navigation">
+				  <ul class="pagination">
+				    <li  ng-repeat="team in AllTeams"><a ng-href="#/teamStats/{{team.teamCode}}" ng-click="getTeamStats()" style="margin:0.2%">{{team.teamName}}</a></li>
+				  </ul>
+				</nav>
+			</div>
+			
+		</div>
+
+
+	</div>
+
+</div>
